@@ -1,25 +1,18 @@
 import DisplayTrip from "./customHooks/DisplayTrip";
-import DisplayCard from "./components/DisplayCard";
+import UserOptions from "./components/UserOptions";
 
 export const metadata = {
-  title: "Santa Sees The World",
+  title: "The SleighLine",
   description: "Travel Tracker Homepage",
 };
 
 export default async function Home() {
   const trips = await DisplayTrip();
-  console.log("@@@@@@@@@@@@", trips);
+  // console.log("@@@@@@@@@@@@", trips);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <DisplayCard />
-      {trips.map((trip) => (
-        <div key={trip.id} className="">
-          <h1 className="">
-            {trip.start} to {trip.end}
-          </h1>
-        </div>
-      ))}
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-[url('/santaBG2.jpg')] bg-cover">
+      <UserOptions trips={trips} />
     </main>
   );
 }
