@@ -5,12 +5,14 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-} from "../components/ui/card";
+} from "../../components/ui/card";
 
-export const DisplayCard  => {
+export default function DisplayCard() {
   return (
     <div>
-
+      <Card>
+        <CardHeader>Header</CardHeader>
+      </Card>
     </div>
-  )
+  );
 }
