@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -83,6 +83,15 @@ export default function UserOptions({ trips }) {
               price is £{cheapPrice}.
             </p>
           </CardFooter>
+          <div>
+            <Image
+              src={"/santaGif.gif"}
+              width={250}
+              height={250}
+              alt=""
+              className="p-12 rounded-full animate-bounce"
+            />
+          </div>
         </Card>
       ) : null}
     </main>

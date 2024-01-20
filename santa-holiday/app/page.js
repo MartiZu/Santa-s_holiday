@@ -11,7 +11,7 @@ export default async function Home() {
   // console.log("@@@@@@@@@@@@", trips);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-[url('/santaBG2.jpg')] bg-cover">
       <UserOptions trips={trips} />
     </main>
   );
