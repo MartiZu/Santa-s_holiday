@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
   DropdownMenu,
@@ -51,18 +52,20 @@ export default function UserOptions({ trips }) {
           <Button variant="outline">Choose your travel destination</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
-          <DropdownMenuLabel>Travel Options</DropdownMenuLabel>
-          <DropdownMenuSeparator />
+          <ScrollArea className="h-[200px] rounded-md border p-4">
+            <DropdownMenuLabel>Travel Options</DropdownMenuLabel>
+            <DropdownMenuSeparator />
 
-          {trips.map((travel) => (
-            <DropdownMenuItem
-              key={travel.id}
-              checked={selectedTravel === travel}
-              onClick={() => handleTravelSelection(travel)}
-            >
-              {`${travel.start} to ${travel.end}`}
-            </DropdownMenuItem>
-          ))}
+            {trips.map((travel) => (
+              <DropdownMenuItem
+                key={travel.id}
+                checked={selectedTravel === travel}
+                onClick={() => handleTravelSelection(travel)}
+              >
+                {`${travel.start} to ${travel.end}`}
+              </DropdownMenuItem>
+            ))}
+          </ScrollArea>
         </DropdownMenuContent>
       </DropdownMenu>
       {display ? (

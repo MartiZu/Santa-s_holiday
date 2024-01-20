@@ -3,7 +3,7 @@ import getTrip from "@/library/getTrip";
 export default async function DisplayTrip() {
   try {
     const tripData = await getTrip();
-    // console.log("display", tripData);
+    console.log("display", tripData);
 
     return tripData;
   } catch (error) {
