@@ -30,7 +30,6 @@ export default function UserOptions({ trips }) {
   const [cheapDate, setCheapDate] = useState(null);
   const [cheapPrice, setCheapPrice] = useState(null);
   const [display, setDisplay] = useState(false);
-  const [animate, setAnimate] = useState(false);
 
   const handleTravelSelection = (travel) => {
     setSelectedTravel(travel);
@@ -39,10 +38,6 @@ export default function UserOptions({ trips }) {
     setCheapDate(travel.cheapest_travel.date);
     setCheapPrice(travel.cheapest_travel.price);
     setDisplay(true);
-  };
-
-  const handleAnimate = () => {
-    setAnimate(true);
   };
 
   return (
@@ -89,7 +84,6 @@ export default function UserOptions({ trips }) {
             </p>
           </CardFooter>
           <div>
-            {/* <button onClick={handleAnimate}>Let's Go!</button> */}
             <Image
               src={"/santaGif.gif"}
               width={250}
