@@ -29,7 +29,9 @@ export default function UserOptions({ trips }) {
   const [end, setEnd] = useState(null);
   const [cheapDate, setCheapDate] = useState(null);
   const [cheapPrice, setCheapPrice] = useState(null);
+  const [otherDates, setOtherDates] = useState([]); // [
   const [display, setDisplay] = useState(false);
+  const [displayOtherDates, setDisplayOtherDates] = useState(false);
 
   const handleTravelSelection = (travel) => {
     setSelectedTravel(travel);
@@ -38,6 +40,7 @@ export default function UserOptions({ trips }) {
     setCheapDate(travel.cheapest_travel.date);
     setCheapPrice(travel.cheapest_travel.price);
     setDisplay(true);
+    setOtherDates(travel.dates);
   };
 
   return (
@@ -72,15 +75,11 @@ export default function UserOptions({ trips }) {
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
-          <CardContent>
-            <p></p>
-          </CardContent>
           <CardFooter>
             <p>
               {" "}
-              The cheapest travel date is{" "}
-              <span className="text-red-500">{cheapDate}</span> and the average
-              price is £{cheapPrice}.
+              The cheapest travel date is {cheapDate} and the average price is £
+              {cheapPrice}.
             </p>
           </CardFooter>
           <div>
@@ -92,6 +91,39 @@ export default function UserOptions({ trips }) {
               className="p-12 rounded-full animate-bounce"
             />
           </div>
+          <div className="flex flex-row content-center justify-center">
+            <button
+              className="bg-red-500 rounded-sm p-2 text-white mb-3"
+              variant="outline"
+              onClick={() => setDisplayOtherDates(true)}
+            >
+              See More
+            </button>
+          </div>
+        </Card>
+      ) : null}
+
+      {displayOtherDates ? (
+        <Card>
+          <CardHeader>
+            <CardTitle>
+              Hello <span className="text-red-500">Santa</span>
+            </CardTitle>
+            <CardDescription>
+              {" "}
+              Grab your reindeers and fly on another date - splash some of that
+              Christmas <span className="text-green-500">cash!</span>{" "}
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            {otherDates.map((date) => (
+              <p className="py-2 border rounded-sm my-4 pl-1" key={date.index}>
+                On the {date.date} the average price is{" "}
+                <span className="text-red-500">£{date.price}</span>
+              </p>
+            ))}
+          </CardContent>
         </Card>
       ) : null}
     </main>
