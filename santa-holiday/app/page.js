@@ -1,4 +1,17 @@
 import DisplayTrip from "./customHooks/DisplayTrip";
+import {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "../components/ui/card";
+
+export const metadata = {
+  title: "Santa Sees The World",
+  description: "Travel Tracker Homepage",
+};
 
 export default async function Home() {
   const trips = await DisplayTrip();
