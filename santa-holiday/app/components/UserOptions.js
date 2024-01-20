@@ -41,6 +41,7 @@ export default function UserOptions({ trips }) {
     setCheapPrice(travel.cheapest_travel.price);
     setDisplay(true);
     setOtherDates(travel.dates);
+    setDisplayOtherDates(false);
   };
 
   return (
