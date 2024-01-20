@@ -2,7 +2,7 @@ import DisplayTrip from "./customHooks/DisplayTrip";
 import UserOptions from "./components/UserOptions";
 
 export const metadata = {
-  title: "Santa Sees The World",
+  title: "The SleighLine",
   description: "Travel Tracker Homepage",
 };
 

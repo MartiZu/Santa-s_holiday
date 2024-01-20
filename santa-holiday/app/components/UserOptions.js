@@ -14,13 +14,19 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export default function UserOptions({ trips }) {
-  console.log("@@@@@@@@@@@@@@@@@@@@@@@@@", trips);
   const [selectedTravel, setSelectedTravel] = useState(null);
-  const [selection, setSelection] = useState(null);
+  const [start, setStart] = useState(null);
+  const [end, setEnd] = useState(null);
+  const [cheapDate, setCheapDate] = useState(null);
+  const [cheapPrice, setCheapPrice] = useState(null);
 
   const handleTravelSelection = (travel) => {
+    console.log("*************", travel);
     setSelectedTravel(travel);
-    setSelection(travel);
+    setStart(travel.start);
+    setEnd(travel.end);
+    setCheapDate(travel.cheapest_travel.date);
+    setCheapPrice(travel.cheapest_travel.price);
   };
 
   return (
@@ -36,15 +42,18 @@ export default function UserOptions({ trips }) {
           {trips.map((travel) => (
             <DropdownMenuItem
               key={travel.id}
-              checked={selectedTravel}
-              onCheckedChange={() => handleTravelSelection(travel)}
+              checked={selectedTravel === travel}
+              onClick={() => handleTravelSelection(travel)}
             >
               {`${travel.start} to ${travel.end}`}
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
-      <div>Hello {selection}</div>
+      <div>
+        From {start} to {end}. The cheapest travel date is {cheapDate} and the
+        average price is {cheapPrice}.
+      </div>
     </>
   );
 }
