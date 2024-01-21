@@ -1,6 +1,6 @@
 # Clone the repo, install dependencies with npm install and run it with npm run dev. Or visit the [link](https://the-sleigh-line-9z3n4rjdt-martizus-projects.vercel.app/) to play with our app.
 
-## Feliz Navihack - working toghether in a team of 3 over 7hours designing and creating a Christmas themed project! 
+## Feliz Navihack - working toghether in a team of 3 over 7 hours designing and creating a Christmas themed project! 
 
 ## Inspiration 
 People always travel over Christmas to meet their loved ones to celebrate and spend time together! So here we are, helping Santa to travel to see people across the globe and spread the love - and that Christmas cash!!
